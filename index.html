@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angular Schedular</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="js/vendor/modernizr.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-ui-router.js"></script>
+  <script src="js/ngStorage.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.0.1/ng-tags-input.min.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.0.1/ng-tags-input.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/jobs/jobsListController.js"></script>
+</head>
+  <body ng-app="schedulerApp">
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <div class="row">
+          <div class="large-12 columns">
+            
+            <nav class="top-bar" data-topbar>
+              <ul class="title-area">
+                
+                <li class="name">
+                  <h1>
+                    <a href="#">
+                      Scheduler
+                    </a>
+                  </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+              </ul>
+              
+              <section class="top-bar-section shopping-cart">
+                <ul class="right">
+                  <li class="divider"></li>
+                  <li>
+                  	<a href="#">Jobs</a>
+                  </li>
+                  <li class="divider"></li>
+                </ul>
+              </section>
+            </nav>
+            
+          </div>
+        </div>
+
+        <div class="row jobs-container" ng-controller="JobsListController as vm">
+          
+          <div class="large-12 columns">
+            <div class="row">
+              
+              <div class="large-12 small-6 columns" ng-repeat="job in vm.jobs" >
+                <div class="panel">
+                	<div class="row">
+                		<div class="job-container large-12 columns">
+                      <div>1</div>
+		                  <div>Job Name: Check stuff</div>
+                      <div>Description: Runs every 2 hours</div>
+                      <div>Interval: 2 hours</div>
+                      <div>Last Run: Yesterday</div>
+		                  <div>Next Run: Today</div>
+                	</div>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+    </div>
+      
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  </body>
+</html>
