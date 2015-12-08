@@ -8,11 +8,6 @@
 	function JobsListController($scope, $http, $localStorage){
 		var vm = this;
 
-		$http.get('Jobs.json').success(function(data) {
-   		vm.jobs = data.jobs;
-   		debugger
-		});
-
 		vm.$storage = $localStorage;
 
 		// setup inCart local storage if it doesn't exist
@@ -20,6 +15,11 @@
 			vm.$storage.jobs = {};
 		}
 
+		vm.jobs = vm.$storage.jobs;
+
+		vm.addJob = function(){
+			debugger
+		}
 	};
 
 }());

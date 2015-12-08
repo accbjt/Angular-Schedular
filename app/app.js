@@ -4,4 +4,5 @@
 	var app = angular.module("schedulerApp", [
         'ngStorage'
       ]);
+
 }());

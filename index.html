@@ -59,16 +59,73 @@
                 <div class="panel">
                 	<div class="row">
                 		<div class="job-container large-12 columns">
-                      <div>1</div>
-		                  <div>Job Name: Check stuff</div>
-                      <div>Description: Runs every 2 hours</div>
-                      <div>Interval: 2 hours</div>
-                      <div>Last Run: Yesterday</div>
-		                  <div>Next Run: Today</div>
+                      <div class="info large-8 columns">
+                        <div>1</div>
+                        <div>Job Name: {{ job.name }}</div>
+                        <div>Interval: {{ job.interval }}</div>
+                        <div>Last Run: {{ job.last_run }}</div>
+                        <div>Next Run: {{ job.next_run }}</div>
+                        <div>Description: {{ job.description }}</div>
+                      </div>
+                      <div class="edit-container large-4 columns">
+                        <div class="button edit">Edit</div>
+                        <div class="button remove">Remove</div>
+                      </div>
+                    </div>
                 	</div>
                 </div>
               </div>
-              
+
+              <form>
+                <div class="row">
+                  <div class="small-8 small-push-1 columns">
+                    <div class="row">
+                      <div class="small-3 columns">
+                        <label for="right-label" class="right">Name</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <input type="text" id="name" placeholder="">
+                      </div>
+                      <div class="small-3 columns">
+                        <label for="interval" class="right">Interval</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <input type="number" id="interval" placeholder="">
+                      </div>
+                      <div class="small-3 columns">
+                        <label for="interval_type" class="right">Interval-Type</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <div class="row">
+                          <div class="large-12 columns">
+                              <select>
+                                <option value="months">Months</option>
+                                <option value="days">Days</option>
+                                <option value="hours">Hours</option>
+                                <option value="minutes">Minutes</option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="small-3 columns">
+                        <label for="description" class="right">Description</label>
+                      </div>
+                      <div class="small-9 columns">
+                        <input type="text" id="description" placeholder="">
+                      </div>
+                      <div class="small-9 columns">
+                        <input class="button" type="submit" id="submit-job" placeholder="" value="Save">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="row">
+                <div class="large-8 large-push-2 columns">
+                  <div class="button add-new-job large-centered columns" ng-click="vm.addJob($event)">Add New Job</div>
+                </div>
+              </div>
             </div>
         </div>
       </div>
